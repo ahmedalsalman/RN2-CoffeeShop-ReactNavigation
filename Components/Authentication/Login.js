@@ -6,7 +6,7 @@ import { TextInput, TouchableOpacity, View } from "react-native";
 import { Text } from "native-base";
 import styles from "./styles";
 
-const Login = () => (
+const Login = ({ navigation }) => (
   <View style={styles.authContainer}>
     <Text style={styles.authTitle}>Login</Text>
     <TextInput
@@ -21,9 +21,9 @@ const Login = () => (
       secureTextEntry={true}
     />
     <TouchableOpacity style={styles.authButton}>
-      <Text style={styles.authButtonText}>Log in</Text>
+      <Text style={styles.authButtonText} onPress={() => navigation.navigate("CoffeeList")}>Log in</Text>
     </TouchableOpacity>
-    <Text style={styles.authOther}>Click here to register!</Text>
+    <Text style={styles.authOther} onPress={() => navigation.navigate("Signup")}>Click here to register!</Text>
   </View>
 );
 
